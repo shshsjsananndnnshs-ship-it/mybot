@@ -9,9 +9,8 @@
 ║  ✅ Broadcast+تأیید   ✅ جستجو ID/user  ✅ گزارش روزانه     ║
 ╚══════════════════════════════════════════════════════════════╝
 pip install pyTelegramBotAPI
-"""
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
+import telebot
+from telebot import types
 # ─── CONFIG ──────────────────────────────────────────────────
 TOKEN        = "8276161949:AAHXrivjMN7nsytAcPzHwglbm16YDin6T8M"
 BOT_USERNAME = "@Hhhhhhh88Adfffbot"

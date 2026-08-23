@@ -906,15 +906,15 @@ def _daily():
 
 threading.Thread(target=_daily,daemon=True).start()
 
-# ─── MAIN ─────────────────────────────────────────────────────
-if __name__ == "__main__":
-    log.info("═"*55)
-    log.info("  ربات پیام ناشناس v3.0 — telebot edition")
-    log.info("═"*55)
-    while True:
-        try:
-            bot.infinity_polling(timeout=10, long_polling_timeout=5)
-        except Exception as e:
-            log.error(f"Polling crashed due to: {e}")
-            log.info("Attempting to reconnect in 5 seconds...")
-            time.sleep(5)
+# if __name__ == "__main__":
+    log.info("="*55)
+    log.info("  ربات پیام ناشناس v3.0 — PTB edition")
+    log.info("="*55)
+    # اینجا ربات جدید را می‌سازیم
+    app = Application.builder().token(TOKEN).build()
+    # هندلرها را اضافه می‌کنیم (فقط چند نمونه، بقیه را بعداً اضافه می‌کنیم)
+    app.add_handler(CommandHandler("start", cmd_start))
+    app.add_handler(MessageHandler(filters.ALL, router))
+    app.add_handler(CallbackQueryHandler(cb))
+    # اجرای ربات بدون کرش
+    app.run_polling(allowed_updates=Update.ALL_TYPES)

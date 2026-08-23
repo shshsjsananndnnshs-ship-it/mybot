@@ -9,8 +9,13 @@
 ║  ✅ Broadcast+تأیید   ✅ جستجو ID/user  ✅ گزارش روزانه     ║
 ╚══════════════════════════════════════════════════════════════╝
 pip install pyTelegramBotAPI
+"""
 import telebot
 from telebot import types
+import sqlite3, threading, hashlib, secrets, time, logging, csv, io, shutil, re
+from datetime import datetime
+from typing import Optional
+
 # ─── CONFIG ──────────────────────────────────────────────────
 TOKEN        = "8276161949:AAHXrivjMN7nsytAcPzHwglbm16YDin6T8M"
 BOT_USERNAME = "@Hhhhhhh88Adfffbot"
@@ -905,15 +910,10 @@ def _daily():
 
 threading.Thread(target=_daily,daemon=True).start()
 
-# if __name__ == "__main__":
-    log.info("="*55)
-    log.info("  ربات پیام ناشناس v3.0 — PTB edition")
-    log.info("="*55)
-    # اینجا ربات جدید را می‌سازیم
-    app = Application.builder().token(TOKEN).build()
-    # هندلرها را اضافه می‌کنیم (فقط چند نمونه، بقیه را بعداً اضافه می‌کنیم)
-    app.add_handler(CommandHandler("start", cmd_start))
-    app.add_handler(MessageHandler(filters.ALL, router))
-    app.add_handler(CallbackQueryHandler(cb))
-    # اجرای ربات بدون کرش
-    app.run_polling(allowed_updates=Update.ALL_TYPES)
+# ─── MAIN ─────────────────────────────────────────────────────
+if __name__=="__main__":
+    log.info("═"*55)
+    log.info("  ربات پیام ناشناس v3.0 — telebot edition")
+    log.info("═"*55)
+    bot.infinity_polling(timeout=10,long_polling_timeout=5)
+

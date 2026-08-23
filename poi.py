@@ -10,12 +10,8 @@
 ╚══════════════════════════════════════════════════════════════╝
 pip install pyTelegramBotAPI
 """
-import telebot
-from telebot import types
-import sqlite3, threading, hashlib, secrets, time, logging, csv, io, shutil, re
-from datetime import datetime
-from typing import Optional
-
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 # ─── CONFIG ──────────────────────────────────────────────────
 TOKEN        = "8276161949:AAHXrivjMN7nsytAcPzHwglbm16YDin6T8M"
 BOT_USERNAME = "@Hhhhhhh88Adfffbot"

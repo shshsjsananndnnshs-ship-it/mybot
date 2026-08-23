@@ -17,7 +17,7 @@ from datetime import datetime
 from typing import Optional
 
 # ─── CONFIG ──────────────────────────────────────────────────
-TOKEN        = ""
+TOKEN        = "8276161949:AAHXrivjMN7nsytAcPzHwglbm16YDin6T8M"
 BOT_USERNAME = "@Hhhhhhh88Adfffbot"
 ROOT_ADMINS  = {467034986}
 DB_PATH      = "anon_v3.db"
